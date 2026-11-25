@@ -136,7 +136,6 @@ export function CheckoutPage() {
                   {...props}
                   inputMode="numeric"
                   autoComplete="cc-csc"
-                  placeholder="000"
                   value={form.cvc}
                   onChange={(event) => update('cvc', event.target.value)}
                 />

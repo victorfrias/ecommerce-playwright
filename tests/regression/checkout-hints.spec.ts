@@ -17,6 +17,7 @@ test.describe('checkout form hints', { tag: '@regression' }, () => {
     await checkout.goto()
 
     for (const { label, placeholder } of checkoutHints) {
+      await checkout.field(label).scrollIntoViewIfNeeded();
       await expect(checkout.field(label)).toHaveAttribute('placeholder', placeholder)
     }
   })
@@ -26,6 +27,7 @@ test.describe('checkout form hints', { tag: '@regression' }, () => {
     await product.addToCart()
     await checkout.goto()
 
+    await checkout.field('CVC').scrollIntoViewIfNeeded();
     await expect(checkout.field('CVC')).not.toHaveAttribute('placeholder')
   })
 })
