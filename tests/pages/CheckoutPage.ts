@@ -19,7 +19,7 @@ export class CheckoutPage {
   }
 
   summary(name: 'Subtotal' | 'Shipping' | 'Total') {
-    return this.page.getByRole('region', { name: 'Order summary' }).getByLabel(name)
+    return this.page.getByRole('region', { name: 'Order summary' }).getByRole('status', { name, exact: true })
   }
 
   async fillValid(overrides: Partial<typeof validCustomer> = {}) {

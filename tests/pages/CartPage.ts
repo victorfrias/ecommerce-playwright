@@ -12,7 +12,7 @@ export class CartPage {
   }
 
   summary(name: 'Subtotal' | 'Shipping' | 'Total') {
-    return this.page.getByRole('region', { name: 'Order summary' }).getByLabel(name)
+    return this.page.getByRole('region', { name: 'Order summary' }).getByRole('status', { name, exact: true })
   }
 
   async increase(name: string) {
