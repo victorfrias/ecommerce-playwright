@@ -22,6 +22,10 @@ export class CheckoutPage {
     return this.page.getByRole('region', { name: 'Order summary' }).getByRole('status', { name, exact: true })
   }
 
+  field(label: string) {
+    return this.page.getByLabel(label, { exact: true })
+  }
+
   async fillValid(overrides: Partial<typeof validCustomer> = {}) {
     const customer = { ...validCustomer, ...overrides }
     await this.page.getByLabel('Full name').fill(customer.name)

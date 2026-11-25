@@ -50,7 +50,13 @@ export function CheckoutPage() {
         <form noValidate onSubmit={onSubmit} className="checkout-form">
           <Field label="Full name" error={errors.name}>
             {(props) => (
-              <input {...props} autoComplete="name" value={form.name} onChange={(event) => update('name', event.target.value)} />
+              <input
+                {...props}
+                autoComplete="name"
+                placeholder="Your Full Name"
+                value={form.name}
+                onChange={(event) => update('name', event.target.value)}
+              />
             )}
           </Field>
           <Field label="Email" error={errors.email}>
@@ -59,6 +65,7 @@ export function CheckoutPage() {
                 {...props}
                 type="email"
                 autoComplete="email"
+                placeholder="Your Email"
                 value={form.email}
                 onChange={(event) => update('email', event.target.value)}
               />
@@ -69,6 +76,7 @@ export function CheckoutPage() {
               <input
                 {...props}
                 autoComplete="street-address"
+                placeholder="Your Street Address"
                 value={form.address}
                 onChange={(event) => update('address', event.target.value)}
               />
@@ -77,7 +85,13 @@ export function CheckoutPage() {
           <div className="field-row">
             <Field label="City" error={errors.city}>
               {(props) => (
-                <input {...props} autoComplete="address-level2" value={form.city} onChange={(event) => update('city', event.target.value)} />
+                <input
+                  {...props}
+                  autoComplete="address-level2"
+                  placeholder="Your City"
+                  value={form.city}
+                  onChange={(event) => update('city', event.target.value)}
+                />
               )}
             </Field>
             <Field label="Postal code" error={errors.postalCode}>
@@ -85,6 +99,7 @@ export function CheckoutPage() {
                 <input
                   {...props}
                   autoComplete="postal-code"
+                  placeholder="Your Postal Code"
                   value={form.postalCode}
                   onChange={(event) => update('postalCode', event.target.value)}
                 />
@@ -97,7 +112,7 @@ export function CheckoutPage() {
                 {...props}
                 inputMode="numeric"
                 autoComplete="cc-number"
-                placeholder="4242 4242 4242 4242"
+                placeholder="0000 0000 0000 0000"
                 value={form.cardNumber}
                 onChange={(event) => update('cardNumber', event.target.value)}
               />
