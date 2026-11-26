@@ -1,14 +1,14 @@
 :root {
-  --paper: #f3efe6;
-  --paper-deep: #e7e0d2;
-  --card: #fbf8f2;
-  --ink: #1c1915;
-  --muted: #5e574c;
-  --line: #d9d0c2;
-  --clay: #b5522a;
-  --clay-deep: #8c3e1c;
-  --moss: #234237;
-  --shadow: 0 16px 40px rgba(48, 32, 16, 0.06);
+  --paper: #eef4fa;
+  --paper-deep: #d7e4f2;
+  --card: #f8fbff;
+  --ink: #10233f;
+  --muted: #526681;
+  --line: #cbd9ea;
+  --clay: #2f67a3;
+  --clay-deep: #1d4f82;
+  --moss: #183b63;
+  --shadow: 0 16px 40px rgba(16, 35, 63, 0.10);
   color: var(--ink);
   background: var(--paper);
   font-family: "Avenir Next", "Segoe UI", sans-serif;
@@ -24,7 +24,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(181, 82, 42, 0.08), transparent 32rem),
+    radial-gradient(circle at top left, rgba(47, 103, 163, 0.12), transparent 32rem),
     var(--paper);
 }
 
@@ -91,7 +91,7 @@ h1, h2, h3, .logo {
   place-items: center;
   border-radius: 999px;
   background: var(--clay);
-  color: #fffaf4;
+  color: #ffffff;
   font-size: 0.75rem;
   font-family: "Avenir Next", "Segoe UI", sans-serif;
 }
@@ -133,7 +133,7 @@ main { padding: 2.5rem 0 4rem; }
   border: 0;
   border-radius: 999px;
   background: var(--ink);
-  color: #f7f2ea;
+  color: #f7fbff;
   text-decoration: none;
 }
 
@@ -209,7 +209,7 @@ main { padding: 2.5rem 0 4rem; }
 
 .filters button[aria-pressed="true"] {
   background: var(--moss);
-  color: #f4f7f5;
+  color: #f5f9fd;
   border-color: var(--moss);
 }
 
@@ -317,7 +317,7 @@ main { padding: 2.5rem 0 4rem; }
   width: 100%;
   border-radius: 0.7rem;
   padding: 0.7rem 0.8rem;
-  background: #fff;
+  background: #ffffff;
 }
 
 .field input[aria-invalid="true"] { border-color: var(--clay); }

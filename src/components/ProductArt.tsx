@@ -25,7 +25,7 @@ function Fold({ ink }: { ink: string }) {
   return (
     <g fill={ink} opacity="0.9">
       <rect x="68" y="78" width="150" height="210" rx="6" />
-      <rect x="108" y="108" width="150" height="210" rx="6" fill="#f6f1e7" stroke={ink} strokeWidth="6" />
+      <rect x="108" y="108" width="150" height="210" rx="6" fill="#edf4fa" stroke={ink} strokeWidth="6" />
     </g>
   )
 }
