@@ -139,6 +139,44 @@ main { padding: 2.5rem 0 4rem; }
 
 .button:hover, .button:focus-visible { background: var(--clay-deep); }
 
+.button-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.button-secondary:hover, .button-secondary:focus-visible {
+  background: var(--paper-deep);
+  color: var(--ink);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.account-panel {
+  max-width: 28rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.account-panel .filters button[aria-selected="true"] {
+  background: var(--moss);
+  color: #f4f7f5;
+  border-color: var(--moss);
+}
+
+.account-error {
+  color: var(--clay-deep);
+  margin: 0;
+}
+
 .featured { margin-top: 4rem; }
 
 .section-head, .toolbar, .summary-row, .confirm-lines li, .cart-list li {
