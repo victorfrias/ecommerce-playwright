@@ -1,0 +1,103 @@
+- generic [ref=f5e3]:
+  - link "Skip to content" [ref=f5e4] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=f5e5]:
+    - link "Halden" [ref=f5e6] [cursor=pointer]:
+      - /url: /
+    - navigation "Primary" [ref=f5e7]:
+      - link "Shop" [ref=f5e8] [cursor=pointer]:
+        - /url: /shop
+      - link "Cart" [ref=f5e9] [cursor=pointer]:
+        - /url: /cart
+        - generic [aria-hidden] [ref=f5e10]: Cart
+  - main [ref=f5e11]:
+    - generic [ref=f5e12]:
+      - generic [ref=f5e13]:
+        - paragraph [ref=f5e14]: Catalog
+        - heading "The collection" [level=1] [ref=f5e15]
+      - generic [ref=f5e16]:
+        - group "Category" [ref=f5e17]:
+          - button "All" [pressed] [ref=f5e18] [cursor=pointer]
+          - button "Ceramics" [ref=f5e19] [cursor=pointer]
+          - button "Textiles" [ref=f5e20] [cursor=pointer]
+          - button "Lighting" [ref=f5e21] [cursor=pointer]
+        - generic [ref=f5e22]:
+          - text: Sort
+          - combobox "Sort" [ref=f5e23]:
+            - option "Featured" [selected]
+            - 'option "Price: low to high"'
+            - 'option "Price: high to low"'
+      - paragraph [ref=f5e24]: 10 products
+      - list "Products" [ref=f5e25]:
+        - listitem [ref=f5e26]:
+          - article [ref=f5e27]:
+            - link "Stoneware Pourer" [ref=f5e28] [cursor=pointer]:
+              - /url: /product/stoneware-pourer
+              - paragraph [aria-hidden] [ref=f5e34]: Ceramics
+              - heading "Stoneware Pourer" [level=2] [ref=f5e35]
+            - paragraph [ref=f5e36]: $48.00
+        - listitem [ref=f5e37]:
+          - article [ref=f5e38]:
+            - link "Speckled Bowl" [ref=f5e39] [cursor=pointer]:
+              - /url: /product/speckled-bowl
+              - paragraph [aria-hidden] [ref=f5e45]: Ceramics
+              - heading "Speckled Bowl" [level=2] [ref=f5e46]
+            - paragraph [ref=f5e47]: $36.00
+        - listitem [ref=f5e48]:
+          - article [ref=f5e49]:
+            - link "Tall Vase" [ref=f5e50] [cursor=pointer]:
+              - /url: /product/tall-vase
+              - paragraph [aria-hidden] [ref=f5e56]: Ceramics
+              - heading "Tall Vase" [level=2] [ref=f5e57]
+            - paragraph [ref=f5e58]: $64.00
+        - listitem [ref=f5e59]:
+          - article [ref=f5e60]:
+            - link "Espresso Cup Set" [ref=f5e61] [cursor=pointer]:
+              - /url: /product/espresso-set
+              - paragraph [aria-hidden] [ref=f5e67]: Ceramics
+              - heading "Espresso Cup Set" [level=2] [ref=f5e68]
+            - paragraph [ref=f5e69]: $32.00
+        - listitem [ref=f5e70]:
+          - article [ref=f5e71]:
+            - link "Linen Throw" [ref=f5e72] [cursor=pointer]:
+              - /url: /product/linen-throw
+              - paragraph [aria-hidden] [ref=f5e78]: Textiles
+              - heading "Linen Throw" [level=2] [ref=f5e79]
+            - paragraph [ref=f5e80]: $88.00
+        - listitem [ref=f5e81]:
+          - article [ref=f5e82]:
+            - link "Wool Cushion" [ref=f5e83] [cursor=pointer]:
+              - /url: /product/wool-cushion
+              - paragraph [aria-hidden] [ref=f5e89]: Textiles
+              - heading "Wool Cushion" [level=2] [ref=f5e90]
+            - paragraph [ref=f5e91]: $42.00
+        - listitem [ref=f5e92]:
+          - article [ref=f5e93]:
+            - link "Table Runner" [ref=f5e94] [cursor=pointer]:
+              - /url: /product/table-runner
+              - paragraph [aria-hidden] [ref=f5e100]: Textiles
+              - heading "Table Runner" [level=2] [ref=f5e101]
+            - paragraph [ref=f5e102]: $38.00
+        - listitem [ref=f5e103]:
+          - article [ref=f5e104]:
+            - link "Brass Task Lamp" [ref=f5e105] [cursor=pointer]:
+              - /url: /product/brass-task-lamp
+              - paragraph [aria-hidden] [ref=f5e112]: Lighting
+              - heading "Brass Task Lamp" [level=2] [ref=f5e113]
+            - paragraph [ref=f5e114]: $120.00
+        - listitem [ref=f5e115]:
+          - article [ref=f5e116]:
+            - link "Paper Lantern" [ref=f5e117] [cursor=pointer]:
+              - /url: /product/paper-lantern
+              - paragraph [aria-hidden] [ref=f5e124]: Lighting
+              - heading "Paper Lantern" [level=2] [ref=f5e125]
+            - paragraph [ref=f5e126]: $54.00
+        - listitem [ref=f5e127]:
+          - article [ref=f5e128]:
+            - link "Arc Floor Lamp" [ref=f5e129] [cursor=pointer]:
+              - /url: /product/arc-floor-lamp
+              - paragraph [aria-hidden] [ref=f5e136]: Lighting
+              - heading "Arc Floor Lamp" [level=2] [ref=f5e137]
+            - paragraph [ref=f5e138]: $210.00
+  - contentinfo [ref=f5e139]:
+    - paragraph [ref=f5e140]: Halden is a demo store for a Playwright portfolio. Checkout does not charge a card.
