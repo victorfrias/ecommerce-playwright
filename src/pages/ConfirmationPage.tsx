@@ -41,7 +41,7 @@ export function ConfirmationPage() {
       </ul>
       {lastOrder.discount > 0 && (
         <p>
-          Member discount <strong>−{formatMoney(lastOrder.discount)}</strong>
+          Member discount <strong>-{formatMoney(lastOrder.discount)}</strong>
         </p>
       )}
       <p className="confirm-total">

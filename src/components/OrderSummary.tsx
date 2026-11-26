@@ -18,7 +18,7 @@ export function OrderSummary({ subtotal, discount, shipping, total }: OrderSumma
       {discount > 0 && (
         <label className="summary-row">
           <span>Member discount</span>
-          <output>−{formatMoney(discount)}</output>
+          <output>-{formatMoney(discount)}</output>
         </label>
       )}
       <label className="summary-row">
