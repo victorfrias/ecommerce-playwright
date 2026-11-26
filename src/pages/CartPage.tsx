@@ -9,7 +9,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export function CartPage() {
   useDocumentTitle('Cart')
-  const { lines, subtotal, shipping, total, setQuantity, removeItem } = useCart()
+  const { lines, subtotal, discount, shipping, total, setQuantity, removeItem } = useCart()
 
   return (
     <div className="cart-page">
@@ -52,7 +52,7 @@ export function CartPage() {
             })}
           </ul>
           <div className="summary-column">
-            <OrderSummary subtotal={subtotal} shipping={shipping} total={total} />
+            <OrderSummary subtotal={subtotal} discount={discount} shipping={shipping} total={total} />
             <Link to="/checkout" className="button">
               Checkout
             </Link>

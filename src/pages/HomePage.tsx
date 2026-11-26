@@ -15,9 +15,14 @@ export function HomePage() {
         <p className="lede">
           Ceramics, textiles, and lamps from independent makers. A short catalog, made to be used every day.
         </p>
-        <Link to="/shop" className="button">
-          Shop the collection
-        </Link>
+        <div className="hero-actions">
+          <Link to="/shop" className="button">
+            Shop the collection
+          </Link>
+          <Link to="/account" className="button button-secondary">
+            User Area
+          </Link>
+        </div>
       </section>
 
       <section className="featured" aria-labelledby="featured-heading">

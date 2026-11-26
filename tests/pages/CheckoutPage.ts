@@ -18,7 +18,7 @@ export class CheckoutPage {
     await this.page.goto('/checkout')
   }
 
-  summary(name: 'Subtotal' | 'Shipping' | 'Total') {
+  summary(name: 'Subtotal' | 'Member discount' | 'Shipping' | 'Total') {
     return this.page.getByRole('region', { name: 'Order summary' }).getByRole('status', { name, exact: true })
   }
 

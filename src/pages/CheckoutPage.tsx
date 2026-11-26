@@ -1,5 +1,6 @@
-import { useState, type FormEvent, type ReactNode } from 'react'
+import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../auth/AuthContext'
 import { useCart } from '../cart/CartContext'
 import { OrderSummary } from '../components/OrderSummary'
 import { emptyCheckout, validateCheckout } from '../domain/checkout'
@@ -8,10 +9,24 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export function CheckoutPage() {
   useDocumentTitle('Checkout')
-  const { lines, subtotal, shipping, total, placeOrder } = useCart()
+  const { user } = useAuth()
+  const { lines, subtotal, discount, shipping, total, placeOrder } = useCart()
   const navigate = useNavigate()
-  const [form, setForm] = useState<CheckoutInput>(emptyCheckout)
+  const [form, setForm] = useState<CheckoutInput>(() => ({
+    ...emptyCheckout(),
+    name: user?.name ?? '',
+    email: user?.email ?? '',
+  }))
   const [errors, setErrors] = useState<CheckoutErrors>({})
+
+  useEffect(() => {
+    if (!user) return
+    setForm((current) => ({
+      ...current,
+      name: current.name || user.name,
+      email: current.email || user.email,
+    }))
+  }, [user])
 
   if (lines.length === 0) {
     return (
@@ -146,7 +161,7 @@ export function CheckoutPage() {
             Place order
           </button>
         </form>
-        <OrderSummary subtotal={subtotal} shipping={shipping} total={total} />
+        <OrderSummary subtotal={subtotal} discount={discount} shipping={shipping} total={total} />
       </div>
     </div>
   )

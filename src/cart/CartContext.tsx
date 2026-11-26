@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useAuth } from '../auth/AuthContext'
 import { getProduct } from '../domain/catalog'
 import { digitsOnly } from '../domain/checkout'
-import { shippingFor } from '../domain/pricing'
+import { memberDiscount, orderTotal, shippingFor } from '../domain/pricing'
 import type { CartItem, CheckoutInput, Order } from '../domain/types'
 
 const CART_KEY = 'halden-cart'
@@ -18,6 +19,7 @@ type CartContextValue = {
   }[]
   itemCount: number
   subtotal: number
+  discount: number
   shipping: number
   total: number
   lastOrder: Order | null
@@ -53,7 +55,10 @@ function readOrder(): Order | null {
     if (!raw) return null
     const parsed = JSON.parse(raw) as Order
     if (!parsed || typeof parsed.id !== 'string') return null
-    return parsed
+    return {
+      ...parsed,
+      discount: typeof parsed.discount === 'number' ? parsed.discount : 0,
+    }
   } catch {
     return null
   }
@@ -64,6 +69,7 @@ function clampQuantity(quantity: number) {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
+  const { user, isLoggedIn } = useAuth()
   const [items, setItems] = useState<CartItem[]>(readCart)
   const [lastOrder, setLastOrder] = useState<Order | null>(readOrder)
 
@@ -95,8 +101,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const itemCount = lines.reduce((sum, line) => sum + line.quantity, 0)
   const subtotal = lines.reduce((sum, line) => sum + line.lineTotal, 0)
+  const discount = memberDiscount(subtotal, isLoggedIn)
   const shipping = shippingFor(subtotal)
-  const total = subtotal + shipping
+  const total = orderTotal(subtotal, isLoggedIn)
 
   function addItem(slug: string, quantity = 1) {
     if (!getProduct(slug) || quantity < 1) return
@@ -135,8 +142,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
       cardLast4: digitsOnly(input.cardNumber).slice(-4),
       lines,
       subtotal,
+      discount,
       shipping,
       total,
+      memberEmail: user?.email,
     }
     setLastOrder(order)
     setItems([])
@@ -147,6 +156,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     lines,
     itemCount,
     subtotal,
+    discount,
     shipping,
     total,
     lastOrder,

@@ -9,6 +9,9 @@ The shop is called **Halden**. It is a fake catalog of ceramics, textiles, and l
 ## Store rules the tests lock in
 
 - Shipping is **$8.00** when the subtotal is under **$75**, and **free** at $75 or more.
+- Logged-in members get a **5%** order discount. Visitors pay full price.
+- Accounts are created from **User Area** (name, email, password). Login uses email and password.
+- Registered users are stored in `data/users.txt` (one `name|email|passwordHash` line each).
 - A line can hold at most **9** of one product.
 - The cart is kept in `localStorage`. The last receipt is kept in `sessionStorage` for the current tab.
 - Card numbers are checked for 16 digits only. Spaces are fine. Nothing is sent to a payment provider.

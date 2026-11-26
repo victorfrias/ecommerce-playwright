@@ -38,8 +38,10 @@ export type Order = {
   cardLast4: string
   lines: OrderLine[]
   subtotal: number
+  discount: number
   shipping: number
   total: number
+  memberEmail?: string
 }
 
 export type CheckoutInput = {
